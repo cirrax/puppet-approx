@@ -11,7 +11,7 @@
 #     Defaults to $title.
 #
 define approx::repository (
-  $url,      
+  $url,
   $reponame = $title,
   $conffile = '/etc/approx/approx.conf',
   $order    = '50',

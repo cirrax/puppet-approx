@@ -5,7 +5,7 @@
 # specific repositories have to be defined with
 # apt::approx::repository.
 #
-class approx( 
+class approx(
   $conffile = '/etc/approx/approx.conf',
   $config   = {},
 ){
@@ -15,15 +15,15 @@ class approx(
   # apt::approx::source resources and line resource
   # types
   concat { $conffile:
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    owner => 'root',
+    group => 'root',
+    mode  => '0644',
   }
 
   concat::fragment{ 'approx.conf_header':
-    target  => '/etc/approx/approx.conf',
-    source  => 'puppet:///modules/approx/approx.conf',
-    order   => '00'
+    target => '/etc/approx/approx.conf',
+    source => 'puppet:///modules/approx/approx.conf',
+    order  => '00'
   }
 
   create_resources('approx::repository',$config)
