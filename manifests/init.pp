@@ -11,9 +11,6 @@ class approx(
 ){
   package { 'approx': ensure => 'installed' }
 
-  # only create this file, the content is managed by
-  # apt::approx::source resources and line resource
-  # types
   concat { $conffile:
     owner => 'root',
     group => 'root',

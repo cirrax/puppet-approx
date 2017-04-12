@@ -9,6 +9,12 @@
 #   $reponame:
 #     Name for this repository on the approx proxy.
 #     Defaults to $title.
+#   $conffile:
+#     config file to add the repository
+#     Defaults to $approx::conffile
+#   $order:
+#     Order for the concat.
+#     Defaults to '50'
 #
 define approx::repository (
   $url,
