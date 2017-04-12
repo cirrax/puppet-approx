@@ -19,7 +19,7 @@
 define approx::repository (
   $url,
   $reponame = $title,
-  $conffile = '/etc/approx/approx.conf',
+  $conffile = $approx::conffile,
   $order    = '50',
 ) {
 

@@ -18,7 +18,7 @@ class approx(
   }
 
   concat::fragment{ 'approx.conf_header':
-    target => '/etc/approx/approx.conf',
+    target => $conffile,
     source => 'puppet:///modules/approx/approx.conf',
     order  => '00'
   }
