@@ -19,12 +19,13 @@
 define approx::repository (
   $url,
   $reponame = $title,
-  $conffile = $approx::conffile,
   $order    = '50',
 ) {
 
+  include approx
+
   concat::fragment{ $title:
-    target  => $conffile,
+    target  => $approx::conffile,
     content => "${reponame} 	${url}\n",
     order   => $order,
   }

@@ -6,9 +6,22 @@
 # apt::approx::repository.
 #
 class approx(
-  $conffile = '/etc/approx/approx.conf',
-  $config   = {},
-){
+  $conffile      = $approx::params::conffile,
+  $cache         = $approx::params::cache,
+  $interval      = $approx::params::interval,
+  $max_rate      = $approx::params::max_rate,
+  $max_redirects = $approx::params::max_redirects,
+  $user          = $approx::params::user,
+  $group         = $approx::params::group,
+  $syslog        = $approx::params::syslog,
+  $pdiffs        = $approx::params::pdiffs,
+  $offline       = $approx::params::offline,
+  $max_wait      = $approx::params::max_wait,
+  $verbose       = $approx::params::verbose,
+  $debug         = $approx::params::debug,
+  $config        = {},
+) inherits approx::params {
+
   package { 'approx': ensure => 'installed' }
 
   concat { $conffile:
@@ -18,9 +31,9 @@ class approx(
   }
 
   concat::fragment{ 'approx.conf_header':
-    target => $conffile,
-    source => 'puppet:///modules/approx/approx.conf',
-    order  => '00'
+    target  => $conffile,
+    content => template('approx/approx.conf_header.erb'),
+    order   => '00'
   }
 
   create_resources('approx::repository',$config)
