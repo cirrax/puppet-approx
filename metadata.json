@@ -1,0 +1,30 @@
+{
+  "name": "cirrax-approx",
+    "version": "0.0.2",
+    "author": "Cirrax GmbH",
+    "license": "GPL-3.0",
+    "summary": "A module to configure approx",
+    "source": "https://github.com/cirrax/puppet-approx",
+    "project_page": "https://github.com/cirrax/puppet-approx",
+    "issues_url": "https://github.com/cirrax/puppet-approx/issues",
+    "tags": ["approx", "apt", "deb"],
+    "operatingsystem_support": [
+      {
+      "operatingsystem":"Debian",
+      "operatingsystemrelease":[ "6", "7", "8", "9" ]
+      },
+      {
+      "operatingsystem": "Ubuntu"
+      }
+     ],
+     "requirements": [
+      {
+        "name": "puppet",
+        "version_requirement": ">=2.7.20 < 5.0.0"
+      }
+    ],
+    "dependencies": [
+      { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0 < 5.0.0" },
+      { "name": "puppetlabs/concat", "version_requirement": ">= 2.0.0 < 3.0.0" }
+    ]
+}
