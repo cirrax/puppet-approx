@@ -26,8 +26,7 @@ define approx::repository (
 
   concat::fragment{ $title:
     target  => $approx::conffile,
-    content => "${reponame} 	${url}\n",
+    content => inline_template("<%= @reponame.ljust(25,' ') %> <%= @url %>\n"),
     order   => $order,
   }
 }
-
