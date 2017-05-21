@@ -22,7 +22,7 @@ define approx::repository (
   $order    = '50',
 ) {
 
-  include approx
+  include ::approx
 
   concat::fragment{ $title:
     target  => $approx::conffile,

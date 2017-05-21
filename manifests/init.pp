@@ -33,7 +33,7 @@ class approx(
   concat::fragment{ 'approx.conf_header':
     target  => $conffile,
     content => template('approx/approx.conf_header.erb'),
-    order   => '00'
+    order   => '00',
   }
 
   create_resources('approx::repository',$config)
