@@ -1,4 +1,10 @@
-# approx
+# approx puppet module
+
+[![Build Status](https://travis-ci.org/cirrax/puppet-approx.svg?branch=master)](https://travis-ci.org/cirrax/puppet-approx)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/cirrax/approx.svg?style=flat-square)](https://forge.puppetlabs.com/cirrax/approx)
+[![Puppet Forge](https://img.shields.io/puppetforge/dt/cirrax/approx.svg?style=flat-square)](https://forge.puppet.com/cirrax/approx)
+[![Puppet Forge](https://img.shields.io/puppetforge/e/cirrax/approx.svg?style=flat-square)](https://forge.puppet.com/cirrax/approx)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/cirrax/approx.svg?style=flat-square)](https://forge.puppet.com/cirrax/approx)
 
 #### Table of Contents
 
@@ -10,8 +16,6 @@
 
 This module is used to configure approx. Approx is a caching proxy for 
 Debian (and derivative) packages requested by apt-get. 
-
-[![Build Status](https://travis-ci.org/cirrax/puppet-approx.svg?branch=master)](https://travis-ci.org/cirrax/puppet-approx)
 
 ## Usage
 
