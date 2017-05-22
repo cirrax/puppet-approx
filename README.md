@@ -11,7 +11,7 @@
 This module is used to configure approx. Approx is a caching proxy for 
 Debian (and derivative) packages requested by apt-get. 
 
-[![Build Status] (https://travis-ci.org/cirrax/puppet-approx.svg?branch=master)](https://travis-ci.org/cirrax/puppet-approx)
+[![Build Status](https://travis-ci.org/cirrax/puppet-approx.svg?branch=master)](https://travis-ci.org/cirrax/puppet-approx)
 
 ## Usage
 
