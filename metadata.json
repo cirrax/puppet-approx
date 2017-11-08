@@ -1,6 +1,6 @@
 {
   "name": "cirrax-approx",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Cirrax GmbH",
     "license": "GPL-3.0",
     "summary": "A module to configure approx",
@@ -20,7 +20,7 @@
      "requirements": [
       {
         "name": "puppet",
-        "version_requirement": ">=2.7.20 < 5.0.0"
+        "version_requirement": ">=2.7.20 < 6.0.0"
       }
     ],
     "dependencies": [
