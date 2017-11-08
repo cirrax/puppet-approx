@@ -11,14 +11,14 @@ env:
         - PUPPET_GEM_VERSION="~> 3.0" STRICT_VARIABLES=yes
         - PUPPET_GEM_VERSION="~> 3.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
         - PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES=yes
-        - PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes
+        - PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes DEPLOY_TO_FORGE=yes
       
 matrix:
         exclude:
                 - rvm: 1.9.3
                   env: PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES=yes
                 - rvm: 1.9.3
-                  env: PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes
+                  env: PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes DEPLOY_TO_FORGE=yes
 
 deploy:
         provider: puppetforge
@@ -29,3 +29,5 @@ deploy:
             tags: true
             # all_branches is required to use tags
             all_branches: true
+            # Only publish the build marked with "DEPLOY_TO_FORGE"
+            condition: "$DEPLOY_TO_FORGE = yes"
