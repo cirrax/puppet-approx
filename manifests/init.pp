@@ -25,9 +25,10 @@ class approx(
   package { 'approx': ensure => 'installed' }
 
   concat { $conffile:
-    owner => 'root',
-    group => 'root',
-    mode  => '0644',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    require => Package['approx'],
   }
 
   concat::fragment{ 'approx.conf_header':
