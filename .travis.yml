@@ -11,23 +11,9 @@ env:
         - PUPPET_GEM_VERSION="~> 3.0" STRICT_VARIABLES=yes
         - PUPPET_GEM_VERSION="~> 3.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
         - PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES=yes
-        - PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes DEPLOY_TO_FORGE=yes
+        - PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes
       
 matrix:
         exclude:
                 - rvm: 1.9.3
                   env: PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES=yes
-                - rvm: 1.9.3
-                  env: PUPPET_GEM_VERSION="~> 5.0" STRICT_VARIABLES=yes DEPLOY_TO_FORGE=yes
-
-deploy:
-        provider: puppetforge
-        user: cirrax
-        password:
-                secure: jWinKW6jCcl+9qCTpVF2qBHf5OohXTohEC15dSihfvVE4MxrUP4WrKjSjZKnPn5PVyackQC6+UovIY8ldkQF9eP1JcTqwGP6IOa4qUQQLkXYFLs8wExNIX2qm/rkNS/a9g/uq+ncUVpLEnN41VfxrSSYItS3Pf3ON0v74h66PVFfXo6MIGV0cJqPbcu3vZvy/Z0L97mI0nskZNELnmRmfnQ0Id5v/Pg75eeBA9PVYxOcNH0Vf9G/SqHWZCFgnDEMpSWFZ83VEsIigTCPDbSCP0R2KJEk8Ks0rl1klE5ANFFNph/4chgSG8FJR/wOU7Hcs8oFi/LpC6Zv+q06vKckFHYnWw2xqOulc5NP9qd2D5czwRzlf0qIAeXnvFAVTb3R11zEI3vVPtJ9hZ93iqjd8ANXnRE4/a9KIGQD2BryE/FEVrEb1jIgKcjN4EOm7S2D8IMoY9fcB9lzaMIuan6Q5oyzl80xQi8cv+ipc57b/Rmsg4LhsRt9NaxP5vOtnn0QOGzm/gyJGJ7X3SDxpDLbKBmujd9WHrTRLFofVNY1eqPA/AlAeJBV3W7m1X/cB9T8lVWytQ+fGie3jW15uVAFQqoVKU+P8gw6xQHEL9zpy93AR7+J01q6EPRNm1Ipcwz7Z7pd50mQclDHekJw+dmQZKI8HbOVhqLfQm4Ha5OkA4M=
-        on:
-            tags: true
-            # all_branches is required to use tags
-            all_branches: true
-            # Only publish the build marked with "DEPLOY_TO_FORGE"
-            condition: "$DEPLOY_TO_FORGE = yes"
