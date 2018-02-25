@@ -1,9 +1,34 @@
 #
-# Approx apt proxy server
+# == Approx apt proxy server, main class
 #
-# Installs the approx server and a basic configuration file
+# @summary Installs the approx server and a basic configuration file
 # specific repositories have to be defined with
 # apt::approx::repository.
+#
+# @examples hiera usage to configure repositories
+#
+#  approx::config:
+#    debian:
+#      url: 'http://ftp.ch.debian.org/debian'
+#    debian-security:
+#      url: 'http://security.debian.org/debian-security'
+#    debian-backports:
+#      url: 'http://ftp.ch.debian.org/debian-backports'
+#
+# @param conffile path to the configuration file
+# @param cache path of the approx cache directory
+# @param interval time  in  minutes  after which a cached file will be considered too old to deliver
+# @param max_rate maximum download rate from remote repositories, in bytes per second
+# @param max_redirects maximum number of HTTP redirections 
+# @param user user that owns the files in cache
+# @param group group that owns the files in cache
+# @param syslog syslog facility to use when logging
+# @param pdiffs whether to support IndexFile diffs
+# @param offline whether to deliver (possibly out-of-date) cached files
+# @param max_wait  how many seconds an approx(8) process will wait for a concurrent download
+# @param verbose whether informational messages should be printed in the log
+# @param debug whether debugging messages should be printed in the log
+# @param config Hash of repositories to configure 
 #
 class approx(
   $conffile      = $approx::params::conffile,

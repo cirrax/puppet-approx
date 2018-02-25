@@ -1,4 +1,6 @@
-
+#
+# Default parameters
+#
 class approx::params {
 
   $conffile      = '/etc/approx/approx.conf'

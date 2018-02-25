@@ -3,18 +3,16 @@
 #
 # Add a repository line to an approx proxy
 #
-# Parameters:
-#   $url:
-#     URL to add to the proxy
-#   $reponame:
-#     Name for this repository on the approx proxy.
-#     Defaults to $title.
-#   $conffile:
-#     config file to add the repository
-#     Defaults to $approx::conffile
-#   $order:
-#     Order for the concat.
-#     Defaults to '50'
+# @example basic usage
+#   approx::repository{'debian-security':
+#     url => 'http://security.debian.org/debian-security', 
+#   }  
+#
+# @params url URL to add to the proxy
+# @params reponame Name for this repository on the approx proxy.
+#                  Defaults to $title.
+# @params order    Order for the concat.
+#                  Defaults to '50'
 #
 define approx::repository (
   $url,

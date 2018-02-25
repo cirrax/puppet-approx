@@ -1,6 +1,8 @@
-
 #
 # Cronjob to run approx-gc
+#
+# Remark approx-gc is not available in newer versions of approx
+# See: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=861947
 #
 class approx::garbage_collect (
 ) {
