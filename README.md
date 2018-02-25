@@ -10,13 +10,17 @@
 #### Table of Contents
 
 1. [Overview](#overview)
-1. [Usage - Configuration options and additional functionality](#usage)
+1. [Usage](#usage)
+1. [Reference](#reference)
+1. [Contribuiting](#contributing)
 
 
 ## Overview
 
 This module is used to configure approx. Approx is a caching proxy for 
 Debian (and derivative) packages requested by apt-get. 
+
+For puppet versions < 4.0, use the 1.x.x Versions.
 
 ## Usage
 
