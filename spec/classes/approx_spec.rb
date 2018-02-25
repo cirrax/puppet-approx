@@ -5,6 +5,7 @@ describe 'approx' do
   let :default_params do
      { :conffile         => '/etc/approx/approx.conf',
        :cache            => '/var/cache/approx',
+       :ensure_cache     => true,
        :interval         => 60,
        :max_rate         => 'unlimited',
        :max_redirects    => 5,
@@ -39,6 +40,12 @@ describe 'approx' do
       .with_order('00')
     }
 
+    it { is_expected.to contain_file( params[:cache] )
+      .with_ensure( 'directory')
+      .with_owner( params[:user] )
+      .with_group( params[:group] )
+      .with_mode( '0755' )
+    }
   end
 
   context 'with defaults' do
@@ -46,6 +53,16 @@ describe 'approx' do
       default_params
     end
     it_behaves_like 'approx shared examples'
+  end
+
+  context 'with ensure_cache false' do
+    let :params do
+      default_params.merge(
+	:ensure_cache => false,
+      )
+    end
+    it { is_expected.not_to contain_file( params[:cache] )
+    }
   end
 
   context 'with creation of repositories' do

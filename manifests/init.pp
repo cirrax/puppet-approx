@@ -17,6 +17,7 @@
 #
 # @param conffile path to the configuration file
 # @param cache path of the approx cache directory
+# @param ensure_cache if true it ensures that the cache directories are created
 # @param interval time  in  minutes  after which a cached file will be considered too old to deliver
 # @param max_rate maximum download rate from remote repositories, in bytes per second
 # @param max_redirects maximum number of HTTP redirections 
@@ -47,6 +48,7 @@
 #
 class approx(
   String $conffile      = $approx::params::conffile,
+  Boolean $ensure_cache = true,
   String $cache         = $approx::params::cache,
   Integer $interval      = $approx::params::interval,
   Variant[Integer, Enum['unlimited']] $max_rate      = $approx::params::max_rate,
@@ -77,6 +79,16 @@ class approx(
     content => template('approx/approx.conf_header.erb'),
     order   => '00',
   }
+
+  if $ensure_cache {
+    file { $cache :
+      ensure => 'directory',
+      owner  => $user,
+      group  => $group,
+      mode   => '0755',
+    }
+  }
+
 
   create_resources('approx::repository',$config)
 
