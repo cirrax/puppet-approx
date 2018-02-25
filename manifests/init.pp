@@ -29,6 +29,21 @@
 # @param verbose whether informational messages should be printed in the log
 # @param debug whether debugging messages should be printed in the log
 # @param config Hash of repositories to configure 
+# @param create_resources  a Hash of Hashes to create additional resources
+#    Defaults to {} (do not create any additional resources)
+#
+#    Example (hiera) to create an xinetd service using puppetlabs-xinetd
+#
+#    approx::create_resources:
+#      xinetd::service:
+#        approx:
+#          server: '/usr/sbin/approx'
+#          user: 'approx'
+#
+#    Will result in  executing:
+#      xinetd::service{'approx':
+#        server => '/usr/sbin/approx'
+#        user   => 'approx'
 #
 class approx(
   String $conffile      = $approx::params::conffile,
@@ -64,4 +79,8 @@ class approx(
   }
 
   create_resources('approx::repository',$config)
+
+  $create_resources.each | $res, $vals | {
+    create_resources($res, $vals )
+  }
 }
