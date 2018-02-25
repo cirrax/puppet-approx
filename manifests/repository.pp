@@ -15,9 +15,9 @@
 #                  Defaults to '50'
 #
 define approx::repository (
-  $url,
-  $reponame = $title,
-  $order    = '50',
+  String $url,
+  String $reponame = $title,
+  String $order    = '50',
 ) {
 
   include ::approx

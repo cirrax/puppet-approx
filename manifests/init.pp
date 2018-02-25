@@ -31,20 +31,21 @@
 # @param config Hash of repositories to configure 
 #
 class approx(
-  $conffile      = $approx::params::conffile,
-  $cache         = $approx::params::cache,
-  $interval      = $approx::params::interval,
-  $max_rate      = $approx::params::max_rate,
-  $max_redirects = $approx::params::max_redirects,
-  $user          = $approx::params::user,
-  $group         = $approx::params::group,
-  $syslog        = $approx::params::syslog,
-  $pdiffs        = $approx::params::pdiffs,
-  $offline       = $approx::params::offline,
-  $max_wait      = $approx::params::max_wait,
-  $verbose       = $approx::params::verbose,
-  $debug         = $approx::params::debug,
-  $config        = {},
+  String $conffile      = $approx::params::conffile,
+  String $cache         = $approx::params::cache,
+  Integer $interval      = $approx::params::interval,
+  Variant[Integer, Enum['unlimited']] $max_rate      = $approx::params::max_rate,
+  Integer $max_redirects = $approx::params::max_redirects,
+  String  $user          = $approx::params::user,
+  String  $group         = $approx::params::group,
+  String  $syslog        = $approx::params::syslog,
+  Boolean $pdiffs        = $approx::params::pdiffs,
+  Boolean $offline       = $approx::params::offline,
+  Integer $max_wait      = $approx::params::max_wait,
+  Boolean $verbose       = $approx::params::verbose,
+  Boolean $debug         = $approx::params::debug,
+  Hash    $config        = {},
+  Hash    $create_resources = {},
 ) inherits approx::params {
 
   package { 'approx': ensure => 'installed' }
