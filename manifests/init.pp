@@ -82,10 +82,11 @@ class approx(
 
   if $ensure_cache {
     file { $cache :
-      ensure => 'directory',
-      owner  => $user,
-      group  => $group,
-      mode   => '0755',
+      ensure  => 'directory',
+      owner   => $user,
+      group   => $group,
+      mode    => '0755',
+      require => Package['approx'], 
     }
   }
 
