@@ -86,7 +86,7 @@ class approx(
       owner   => $user,
       group   => $group,
       mode    => '0755',
-      require => Package['approx'], 
+      require => Package['approx'],
     }
   }
 
