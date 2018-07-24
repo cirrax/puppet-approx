@@ -74,5 +74,5 @@ from the Puppet Labs style guide.
 
 This module is mainly written by [Cirrax GmbH](https://cirrax.com).
 
-See the [list of contributors](https://github.com/cirrax/puppet-postfix/graphs/contributors)
+See the [list of contributors](https://github.com/cirrax/puppet-approx/graphs/contributors)
 for a list of all contributors.
