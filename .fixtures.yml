@@ -1,9 +1,11 @@
 ---
 fixtures:
   repositories:
-          "concat":
-                  repo:  "https://github.com/puppetlabs/puppetlabs-concat.git"
-          "stdlib":
-                  repo: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    concat:
+      repo: 'https://github.com/puppetlabs/puppetlabs-concat.git'
+    stdlib:
+      repo: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
+    cron_crore:
+      repo: 'https://github.com/puppetlabs/puppetlabs-cron_core'
   symlinks:
-          "approx": "#{source_dir}"
+    approx: "#{source_dir}"
