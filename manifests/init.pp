@@ -47,23 +47,23 @@
 #        user   => 'approx'
 #
 class approx(
-  String $conffile      = $approx::params::conffile,
-  Boolean $ensure_cache = true,
-  String $cache         = $approx::params::cache,
-  Integer $interval      = $approx::params::interval,
-  Variant[Integer, Enum['unlimited']] $max_rate      = $approx::params::max_rate,
-  Integer $max_redirects = $approx::params::max_redirects,
-  String  $user          = $approx::params::user,
-  String  $group         = $approx::params::group,
-  String  $syslog        = $approx::params::syslog,
-  Boolean $pdiffs        = $approx::params::pdiffs,
-  Boolean $offline       = $approx::params::offline,
-  Integer $max_wait      = $approx::params::max_wait,
-  Boolean $verbose       = $approx::params::verbose,
-  Boolean $debug         = $approx::params::debug,
-  Hash    $config        = {},
-  Hash    $create_resources = {},
-) inherits approx::params {
+  String            $conffile,
+  Optional[String]  $cache            = undef,
+  Optional[Integer] $interval         = undef,
+  Optional[Variant[Integer, Enum['unlimited']]] $max_rate = undef,
+  Optional[Integer] $max_redirects    = undef,
+  Optional[String]  $user             = undef,
+  Optional[String]  $group            = undef,
+  Optional[String]  $syslog           = undef,
+  Optional[Boolean] $pdiffs           = undef,
+  Optional[Boolean] $offline          = undef,
+  Optional[Integer] $max_wait         = undef,
+  Optional[Boolean] $verbose          = undef,
+  Optional[Boolean] $debug            = undef,
+  Boolean           $ensure_cache     = true,
+  Hash              $config           = {},
+  Hash              $create_resources = {},
+) {
 
   package { 'approx': ensure => 'installed' }
 
@@ -80,7 +80,7 @@ class approx(
     order   => '00',
   }
 
-  if $ensure_cache {
+  if ( $ensure_cache and $cache ) {
     file { $cache :
       ensure  => 'directory',
       owner   => $user,
@@ -89,7 +89,6 @@ class approx(
       require => Package['approx'],
     }
   }
-
 
   create_resources('approx::repository',$config)
 

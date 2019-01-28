@@ -6,40 +6,40 @@
 # no need to uncomment them unless you want a different value.
 # See approx.conf(5) for details.
 #
-<% if @cache != scope['approx::params::cache'] -%>
+<% if @cache -%>
 $cache		<%= @cache %>
 <% end -%>
-<% if @interval != scope['approx::params::interval'] -%>
+<% if @interval -%>
 $interval	<%= @interval %>
 <% end -%>
-<% if @max_rate != scope['approx::params::max_rate'] -%>
+<% if @max_rate -%>
 $max_rate	<%= @max_rate %>
 <% end -%>
-<% if @max_redirects != scope['approx::params::max_redirects'] -%>
+<% if @max_redirects -%>
 $max_redirects  <%= @max_redirects %>
 <% end -%>
-<% if @user != scope['approx::params::user'] -%>
+<% if @user -%>
 $user		<%= @user %>
 <% end -%>
-<% if @user != scope['approx::params::group'] -%>
+<% if @user -%>
 $group		<%= @group %>
 <% end -%>
-<% if @syslog != scope['approx::params::syslog'] -%>
+<% if @syslog -%>
 $syslog    	<%= @syslog %>
 <% end -%>
-<% if @pdiffs != scope['approx::params::pdiffs'] -%>
+<% if @pdiffs -%>
 $pdiffs	        <%= @pdiffs %>
 <% end -%>
-<% if @offline != scope['approx::params::offline'] -%>
+<% if @offline -%>
 $offline	<%= @offline %>
 <% end -%>
-<% if @max_wait!= scope['approx::params::max_wait'] -%>
+<% if @max_wait -%>
 $max_wait	<%= @max_wait %>
 <% end -%>
-<% if @verbose != scope['approx::params::verbose'] -%>
+<% if @verbose -%>
 $verbose	<%= @verbose %>
 <% end -%>
-<% if @debug != scope['approx::params::debug'] -%>
+<% if @debug -%>
 $debug		<%= @debug %>
 <% end -%>
 

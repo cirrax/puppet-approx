@@ -1,1 +1,17 @@
---- {}
+---
+# approx module, common.yaml
+#
+approx::conffile: '/etc/approx/approx.conf'
+
+#approx::cache: '/var/cache/approx'
+#approx::interval: 60
+#approx::max_rate: 'unlimited'
+#approx::max_redirects: 5
+#approx::user: 'approx'
+#approx::group: 'approx'
+#approx::syslog: 'daemon'
+#approx::pdiffs: true
+#approx::offline: false
+#approx::max_wait: 10
+#approx::verbose: false
+#approx::debug: false
