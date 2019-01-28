@@ -47,23 +47,23 @@
 #        user   => 'approx'
 #
 class approx(
-  String $conffile      = $approx::params::conffile,
-  Boolean $ensure_cache = true,
-  String $cache         = $approx::params::cache,
-  Integer $interval      = $approx::params::interval,
-  Variant[Integer, Enum['unlimited']] $max_rate      = $approx::params::max_rate,
-  Integer $max_redirects = $approx::params::max_redirects,
-  String  $user          = $approx::params::user,
-  String  $group         = $approx::params::group,
-  String  $syslog        = $approx::params::syslog,
-  Boolean $pdiffs        = $approx::params::pdiffs,
-  Boolean $offline       = $approx::params::offline,
-  Integer $max_wait      = $approx::params::max_wait,
-  Boolean $verbose       = $approx::params::verbose,
-  Boolean $debug         = $approx::params::debug,
-  Hash    $config        = {},
+  String $conffile,
+  String $cache,
+  Integer $interval,
+  Variant[Integer, Enum['unlimited']] $max_rate,
+  Integer $max_redirects,
+  String  $user,
+  String  $group,
+  String  $syslog,
+  Boolean $pdiffs,
+  Boolean $offline,
+  Integer $max_wait,
+  Boolean $verbose,
+  Boolean $debug,
+  Boolean $ensure_cache     = true,
+  Hash    $config           = {},
   Hash    $create_resources = {},
-) inherits approx::params {
+) {
 
   package { 'approx': ensure => 'installed' }
 
@@ -89,7 +89,6 @@ class approx(
       require => Package['approx'],
     }
   }
-
 
   create_resources('approx::repository',$config)
 
