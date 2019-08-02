@@ -6,9 +6,8 @@ describe 'approx::garbage_collect' do
 
   it 'configures a cron' do
     is_expected.to contain_cron('approx-gc').with(
-      :command     => "/usr/sbin/approx-gc -q",
-      :user        => 'root',
+      command: '/usr/sbin/approx-gc -q',
+      user: 'root',
     )
   end
-
 end
