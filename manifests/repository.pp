@@ -1,6 +1,4 @@
 #
-# Approx repository
-#
 # Add a repository line to an approx proxy
 #
 # @example basic usage
@@ -8,11 +6,14 @@
 #     url => 'http://security.debian.org/debian-security', 
 #   }  
 #
-# @params url URL to add to the proxy
-# @params reponame Name for this repository on the approx proxy.
-#                  Defaults to $title.
-# @params order    Order for the concat.
-#                  Defaults to '50'
+# @params url
+#   URL to add to the proxy
+# @params reponame
+#   Name for this repository on the approx proxy.
+#   Defaults to $title.
+# @params order
+#   Order for the concat.
+#   Defaults to '50'
 #
 define approx::repository (
   String $url,

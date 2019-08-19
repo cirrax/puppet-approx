@@ -53,14 +53,7 @@ approx::config:
 ~~~
 
 ## Reference
-### classes
-* [::approx](http://www.puppetmodule.info/github/cirrax/puppet-approx/master/puppet_classes/approx)
-* [::approx::params](http://www.puppetmodule.info/github/cirrax/puppet-approx/master/puppet_classes/approx_3A_3Aparams)
-* [::approx::garbage_collect](http://www.puppetmodule.info/github/cirrax/puppet-approx/master/puppet_classes/approx_3A_3Agarbage_collect)
-
-### defined types
-* [::approx::repository](http://www.puppetmodule.info/github/cirrax/puppet-approx/master/puppet_defined_types/approx_3A_3Arepository)
-
+See [REFERENCE.md](https://github.com/cirrax/puppet-approx/blob/master/REFERENCE.md)
 
 ## Contributing
 
