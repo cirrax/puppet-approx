@@ -6,6 +6,7 @@
 [![Puppet Forge](https://img.shields.io/puppetforge/e/cirrax/approx.svg?style=flat-square)](https://forge.puppet.com/cirrax/approx)
 [![Puppet Forge](https://img.shields.io/puppetforge/f/cirrax/approx.svg?style=flat-square)](https://forge.puppet.com/cirrax/approx)
 [![puppetmodule.info docs](http://www.puppetmodule.info/images/badge.png)](http://www.puppetmodule.info/github/cirrax/puppet-approx)
+[![Coverage Status](https://coveralls.io/repos/github/cirrax/puppet-approx/badge.svg)](https://coveralls.io/github/cirrax/puppet-approx)
 
 #### Table of Contents
 
