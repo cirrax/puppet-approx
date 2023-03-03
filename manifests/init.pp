@@ -60,7 +60,7 @@
 #        server => '/usr/sbin/approx'
 #        user   => 'approx'
 #
-class approx(
+class approx (
   String            $conffile,
   Optional[String]  $cache            = undef,
   Optional[Integer] $interval         = undef,
@@ -78,7 +78,6 @@ class approx(
   Hash              $config           = {},
   Hash              $create_resources = {},
 ) {
-
   package { 'approx': ensure => 'installed' }
 
   concat { $conffile:
@@ -88,7 +87,7 @@ class approx(
     require => Package['approx'],
   }
 
-  concat::fragment{ 'approx.conf_header':
+  concat::fragment { 'approx.conf_header':
     target  => $conffile,
     content => template('approx/approx.conf_header.erb'),
     order   => '00',

@@ -20,10 +20,9 @@ define approx::repository (
   String $reponame = $title,
   String $order    = '50',
 ) {
+  include approx
 
-  include ::approx
-
-  concat::fragment{ $title:
+  concat::fragment { $title:
     target  => $approx::conffile,
     content => inline_template("<%= @reponame.ljust(25,' ') %> <%= @url %>\n"),
     order   => $order,

@@ -6,7 +6,6 @@
 #
 class approx::garbage_collect (
 ) {
-
   cron { 'approx-gc':
     command => '/usr/sbin/approx-gc -q',
     user    => 'root',
