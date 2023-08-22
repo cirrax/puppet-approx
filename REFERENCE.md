@@ -7,11 +7,11 @@
 ### Classes
 
 * [`approx`](#approx): Installs the approx server and a basic configuration file
-* [`approx::garbage_collect`](#approx--garbage_collect): Cronjob to run approx-gc
+* [`approx::garbage_collect`](#approxgarbage_collect): Cronjob to run approx-gc
 
 ### Defined types
 
-* [`approx::repository`](#approx--repository): Add a repository line to an approx proxy
+* [`approx::repository`](#approxrepository): Add a repository line to an approx proxy
 
 ## Classes
 
@@ -55,134 +55,134 @@ Will result in  executing:
 
 The following parameters are available in the `approx` class:
 
-* [`conffile`](#-approx--conffile)
-* [`cache`](#-approx--cache)
-* [`ensure_cache`](#-approx--ensure_cache)
-* [`interval`](#-approx--interval)
-* [`max_rate`](#-approx--max_rate)
-* [`max_redirects`](#-approx--max_redirects)
-* [`user`](#-approx--user)
-* [`group`](#-approx--group)
-* [`syslog`](#-approx--syslog)
-* [`pdiffs`](#-approx--pdiffs)
-* [`offline`](#-approx--offline)
-* [`max_wait`](#-approx--max_wait)
-* [`verbose`](#-approx--verbose)
-* [`debug`](#-approx--debug)
-* [`config`](#-approx--config)
-* [`create_resources`](#-approx--create_resources)
+* [`conffile`](#conffile)
+* [`cache`](#cache)
+* [`ensure_cache`](#ensure_cache)
+* [`interval`](#interval)
+* [`max_rate`](#max_rate)
+* [`max_redirects`](#max_redirects)
+* [`user`](#user)
+* [`group`](#group)
+* [`syslog`](#syslog)
+* [`pdiffs`](#pdiffs)
+* [`offline`](#offline)
+* [`max_wait`](#max_wait)
+* [`verbose`](#verbose)
+* [`debug`](#debug)
+* [`config`](#config)
+* [`create_resources`](#create_resources)
 
-##### <a name="-approx--conffile"></a>`conffile`
+##### <a name="conffile"></a>`conffile`
 
 Data type: `String`
 
 path to the configuration file
 
-##### <a name="-approx--cache"></a>`cache`
+##### <a name="cache"></a>`cache`
 
 Data type: `Optional[String]`
 
 path of the approx cache directory
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--ensure_cache"></a>`ensure_cache`
+##### <a name="ensure_cache"></a>`ensure_cache`
 
 Data type: `Boolean`
 
 if true it ensures that the cache directories are created
 
-Default value: `true`
+Default value: ``true``
 
-##### <a name="-approx--interval"></a>`interval`
+##### <a name="interval"></a>`interval`
 
 Data type: `Optional[Integer]`
 
 time in minutes after which a cached file will be considered too old to deliver
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--max_rate"></a>`max_rate`
+##### <a name="max_rate"></a>`max_rate`
 
 Data type: `Optional[Variant[Integer, Enum['unlimited']]]`
 
 maximum download rate from remote repositories, in bytes per second
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--max_redirects"></a>`max_redirects`
+##### <a name="max_redirects"></a>`max_redirects`
 
 Data type: `Optional[Integer]`
 
 maximum number of HTTP redirections
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--user"></a>`user`
+##### <a name="user"></a>`user`
 
 Data type: `Optional[String]`
 
 user that owns the files in cache
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--group"></a>`group`
+##### <a name="group"></a>`group`
 
 Data type: `Optional[String]`
 
 group that owns the files in cache
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--syslog"></a>`syslog`
+##### <a name="syslog"></a>`syslog`
 
 Data type: `Optional[String]`
 
 syslog facility to use when logging
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--pdiffs"></a>`pdiffs`
+##### <a name="pdiffs"></a>`pdiffs`
 
 Data type: `Optional[Boolean]`
 
 whether to support IndexFile diffs
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--offline"></a>`offline`
+##### <a name="offline"></a>`offline`
 
 Data type: `Optional[Boolean]`
 
 whether to deliver (possibly out-of-date) cached files
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--max_wait"></a>`max_wait`
+##### <a name="max_wait"></a>`max_wait`
 
 Data type: `Optional[Integer]`
 
 how many seconds an approx(8) process will wait for a concurrent download
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--verbose"></a>`verbose`
+##### <a name="verbose"></a>`verbose`
 
 Data type: `Optional[Boolean]`
 
 whether informational messages should be printed in the log
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--debug"></a>`debug`
+##### <a name="debug"></a>`debug`
 
 Data type: `Optional[Boolean]`
 
 whether debugging messages should be printed in the log
 
-Default value: `undef`
+Default value: ``undef``
 
-##### <a name="-approx--config"></a>`config`
+##### <a name="config"></a>`config`
 
 Data type: `Hash`
 
@@ -190,7 +190,7 @@ Hash of repositories to configure
 
 Default value: `{}`
 
-##### <a name="-approx--create_resources"></a>`create_resources`
+##### <a name="create_resources"></a>`create_resources`
 
 Data type: `Hash`
 
@@ -199,7 +199,7 @@ a Hash of Hashes to create additional resources
 
 Default value: `{}`
 
-### <a name="approx--garbage_collect"></a>`approx::garbage_collect`
+### <a name="approxgarbage_collect"></a>`approx::garbage_collect`
 
 Cronjob to run approx-gc
 
@@ -208,7 +208,7 @@ Cronjob to run approx-gc
 
 ## Defined types
 
-### <a name="approx--repository"></a>`approx::repository`
+### <a name="approxrepository"></a>`approx::repository`
 
 Add a repository line to an approx proxy
 
@@ -226,17 +226,17 @@ approx::repository{'debian-security':
 
 The following parameters are available in the `approx::repository` defined type:
 
-* [`url`](#-approx--repository--url)
-* [`reponame`](#-approx--repository--reponame)
-* [`order`](#-approx--repository--order)
+* [`url`](#url)
+* [`reponame`](#reponame)
+* [`order`](#order)
 
-##### <a name="-approx--repository--url"></a>`url`
+##### <a name="url"></a>`url`
 
 Data type: `String`
 
 URL to add to the proxy
 
-##### <a name="-approx--repository--reponame"></a>`reponame`
+##### <a name="reponame"></a>`reponame`
 
 Data type: `String`
 
@@ -245,7 +245,7 @@ Defaults to $title.
 
 Default value: `$title`
 
-##### <a name="-approx--repository--order"></a>`order`
+##### <a name="order"></a>`order`
 
 Data type: `String`
 
