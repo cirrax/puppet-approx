@@ -14,9 +14,19 @@
 # @param unit
 #  The target unit file to create
 #
+# @param service_name
+#  the name of the service we want to ensure
+# @param service_ensure
+#  state of the service to ensure
+# @param service_enable
+#  if the service should be enabled or not
+#
 class approx::systemd_socket (
   Optional[Array[String]] $listen_streams = undef,
   Systemd::Unit           $unit           = 'approx.socket',
+  String[1]               $service_name   = 'approx.socket',
+  String[1]               $service_ensure = 'running',
+  Boolean                 $service_enable = true,
 ) {
   if $listen_streams {
     systemd::dropin_file { 'approx.conf':
@@ -36,5 +46,10 @@ class approx::systemd_socket (
       ensure => 'absent',
       unit   => $unit,
     }
+  }
+
+  service { $service_name:
+    ensure => $service_ensure,
+    enable => $service_enable,
   }
 }

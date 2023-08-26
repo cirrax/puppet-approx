@@ -210,6 +210,9 @@ The following parameters are available in the `approx::systemd_socket` class:
 
 * [`listen_streams`](#listen_streams)
 * [`unit`](#unit)
+* [`service_name`](#service_name)
+* [`service_ensure`](#service_ensure)
+* [`service_enable`](#service_enable)
 
 ##### <a name="listen_streams"></a>`listen_streams`
 
@@ -231,6 +234,30 @@ Data type: `Systemd::Unit`
 The target unit file to create
 
 Default value: `'approx.socket'`
+
+##### <a name="service_name"></a>`service_name`
+
+Data type: `String[1]`
+
+the name of the service we want to ensure
+
+Default value: `'approx.socket'`
+
+##### <a name="service_ensure"></a>`service_ensure`
+
+Data type: `String[1]`
+
+state of the service to ensure
+
+Default value: `'running'`
+
+##### <a name="service_enable"></a>`service_enable`
+
+Data type: `Boolean`
+
+if the service should be enabled or not
+
+Default value: ``true``
 
 ## Defined types
 
