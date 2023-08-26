@@ -7,7 +7,6 @@
 ### Classes
 
 * [`approx`](#approx): Installs the approx server and a basic configuration file
-* [`approx::garbage_collect`](#approxgarbage_collect): Cronjob to run approx-gc
 * [`approx::systemd_socket`](#approxsystemd_socket): alter port/ip to listen if using systemd
 
 ### Defined types
@@ -199,13 +198,6 @@ a Hash of Hashes to create additional resources
  Defaults to {} (do not create any additional resources)
 
 Default value: `{}`
-
-### <a name="approxgarbage_collect"></a>`approx::garbage_collect`
-
-Cronjob to run approx-gc
-
-* **Note** approx-gc is not available in newer versions of approx
-(@see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=861947)
 
 ### <a name="approxsystemd_socket"></a>`approx::systemd_socket`
 
