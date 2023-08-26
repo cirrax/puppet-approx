@@ -30,9 +30,10 @@ class approx::systemd_socket (
 ) {
   if $listen_streams {
     systemd::dropin_file { 'approx.conf':
-      ensure  => 'present',
-      unit    => $unit,
-      content => inline_epp( @(ENDTEMPLATE)
+      ensure   => 'present',
+      unit     => $unit,
+      filename => 'override.conf',
+      content  => inline_epp( @(ENDTEMPLATE)
         [Socket]
         ListenStream=
         <% $listen_streams.each | String[1] $v | { -%>
@@ -43,8 +44,9 @@ class approx::systemd_socket (
     }
   } else {
     systemd::dropin_file { 'approx.conf':
-      ensure => 'absent',
-      unit   => $unit,
+      ensure   => 'absent',
+      unit     => $unit,
+      filename => 'override.conf',
     }
   }
 
