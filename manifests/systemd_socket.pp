@@ -39,6 +39,7 @@ class approx::systemd_socket (
         <% $listen_streams.each | String[1] $v | { -%>
         ListenStream=<%= $v %> 
         <% } -%> 
+        FreeBind=true
         |ENDTEMPLATE
       ),
     }
