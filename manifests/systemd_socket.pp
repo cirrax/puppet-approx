@@ -23,10 +23,10 @@ class approx::systemd_socket (
       ensure  => 'present',
       unit    => $unit,
       content => inline_epp( @(ENDTEMPLATE)
-        <Socket>
+        [Socket]
         ListenStream=
-        <% $listen_streams.each | String[1] $v | { %>
-        ListenStream <%= $v -%> 
+        <% $listen_streams.each | String[1] $v | { -%>
+        ListenStream=<%= $v %> 
         <% } -%> 
         |ENDTEMPLATE
       ),
