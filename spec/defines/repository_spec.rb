@@ -12,7 +12,7 @@ describe 'approx::repository' do
 
     context 'it includes concat_fragment' do
       it {
-        is_expected.to contain_concat_fragment(title)
+        is_expected.to contain_concat__fragment(title)
           .with_target('/etc/approx/approx.conf')
       }
     end
