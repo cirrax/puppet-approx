@@ -8,6 +8,7 @@
 
 * [`approx`](#approx): Installs the approx server and a basic configuration file
 * [`approx::garbage_collect`](#approxgarbage_collect): Cronjob to run approx-gc
+* [`approx::systemd_socket`](#approxsystemd_socket): alter port/ip to listen if using systemd
 
 ### Defined types
 
@@ -205,6 +206,39 @@ Cronjob to run approx-gc
 
 * **Note** approx-gc is not available in newer versions of approx
 (@see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=861947)
+
+### <a name="approxsystemd_socket"></a>`approx::systemd_socket`
+
+if on a system with systemd, you can use this class
+to alter port/ip to listen on.
+
+#### Parameters
+
+The following parameters are available in the `approx::systemd_socket` class:
+
+* [`listen_streams`](#listen_streams)
+* [`unit`](#unit)
+
+##### <a name="listen_streams"></a>`listen_streams`
+
+Data type: `Optional[Array[String]]`
+
+Array of ListenStream option to listen
+if undef (default) the dropin is set to absent
+Example (yaml):
+  approx::systemd_socket::listen_streams:
+    - '127.0.0.1:9999'
+    - '[::1]:9999'
+
+Default value: ``undef``
+
+##### <a name="unit"></a>`unit`
+
+Data type: `Systemd::Unit`
+
+The target unit file to create
+
+Default value: `'approx.socket'`
 
 ## Defined types
 

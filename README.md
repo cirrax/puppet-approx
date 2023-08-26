@@ -51,6 +51,10 @@ approx::config:
       url: 'http://security.debian.org/debian-security'
 ~~~
 
+## Systemd
+Newer debian systems using systemd use a systemd socket to configure the listening port/ip.
+To change where approx listen, include the class approx::systemd\_socket and set the $listen\_streams.
+
 ## Reference
 See [REFERENCE.md](https://github.com/cirrax/puppet-approx/blob/master/REFERENCE.md)
 

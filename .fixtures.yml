@@ -6,5 +6,6 @@ fixtures:
     concat: puppetlabs/concat
     stdlib: puppetlabs/stdlib
     cron_crore: puppetlabs/cron_core
+    systemd: puppet/systemd
   symlinks:
     approx: "#{source_dir}"
